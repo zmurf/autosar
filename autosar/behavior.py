@@ -899,7 +899,7 @@ class InternalBehaviorCommon(Element):
             baseName = "TMT_"+runnable.name
             eventName = self._findEventName(baseName)
 
-        event = autosar.behavior.TimingEvent(eventName,runnable.ref,period)
+        event = autosar.behavior.TimingEvent(eventName,runnable.ref,period, parent=self)
 
         if modeDependency is not None:
             self._processModeDependency(event, modeDependency, ws.version)
